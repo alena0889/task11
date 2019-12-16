@@ -13,10 +13,15 @@
     <script>
         let age = document.getElementById('age');
 
+        // function showUser(surname, name) {
+        //     alert("Пользователь " + surname + " " + name + ", его возраст " + age.value);
+        // }
+        // showUser("Smirnov","Yura");
+
         function showUser(surname, name) {
-            alert("Пользователь " + surname + " " + name + ", его возраст " + age.value);
+            alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
         }
-        showUser("Smirnov","Yura");
+        showUser.apply(age, ["Smirnov ", "Yura"]);   
 
     </script>
 </body>
